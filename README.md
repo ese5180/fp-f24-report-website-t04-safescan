@@ -33,13 +33,13 @@ TODO: Add resolution of each requirement
   - **Verification**: Configured the Device Tree to only recognize the I2C address 0x24, ensuring exclusive communication with a designated RFID reader.
 
 - **SEC03**: The authentication shall run on ARM TrustZone.
-  - **Implementation & Verification**: Utilized ARM TrustZone to provide a secure environment for authentication processes, ensuring sensitive operations are protected.
+  - **Verification**: Utilized ARM TrustZone to provide a secure environment for authentication processes, ensuring sensitive operations are protected.
 
 - **SEC04**: WiFi communication shall happen through certificate authentication.
-  - **Implementation & Verification**: Implemented MQTT over TLS using X.509 client certificates, ensuring encrypted and authenticated communication with the MQTT broker.
+  - **Verification**: Implemented MQTT over TLS using X.509 client certificates, ensuring encrypted and authenticated communication with the MQTT broker.
 
 - **SEC05**: The nRF7002 shall disallow programming firmware from an untrusted in-circuit emulator (ICE).
-  - **Implementation & Verification**: Restricted firmware programming to authenticated tools only, securing against unauthorized access and modifications.
+  - **Verification**: Restricted firmware programming to authenticated tools only, securing against unauthorized access and modifications.
 
 ## Hardware Requirements
 
@@ -76,7 +76,7 @@ TODO: Add resolution of each requirement
   - **Implementation & Verification**: Employed Zephyr RTOS, leveraging its features for MQTT, I2C, and logging to enhance system functionality.
 
 - **SRS04**: The nRF7002DK shall use the Memfault Device Reliability platform.
-  - **Implementation & Verification**: Integrated Memfault to monitor system stability and facilitate issue diagnosis through core dumps and telemetry.
+  - **Verification**: Integrated Memfault to monitor system stability and facilitate issue diagnosis through core dumps and telemetry.
 
 - **SRS05**: The analytics platform shall be able to receive data from each nRF7002DK.
   - **Verification**: The PyQt Python-based platform received data every 5 seconds over MQTT WiFi, confirming real-time communication.
