@@ -99,17 +99,34 @@ The key functions of this project are:
 
 ## Power & Cost Budgeting
 
-[TO DO - POWER BUDGETING]
+### Power
 
 Below is the power budget diagram which outlines the distribution and consumption of power across our hardware components:
 
 ![Power Budget](images/Power_Budget.png)
 
-The parts we used are listed below:
+The nRF7002DK will remain in sleep mode for most of its life, only needing to wake up every second to send an event. Entering those details into the online power profiler, we see a very low power consumption:
+
+![Power profiler](images/power_profiler.png)
+
+We can assume a worst case power draw of 1mA, so at 3.6V that will come out to 3.6mW.
+
+The PN532s consume 150mA during operation. Using that value as current consumption, we can compute the maximum upper threshold on current consumption - in reality it will be significantly lesser than that with some clever circuitry, perhaps using a transistor connected to a GPIO to turn the PN532s on only when a sample should be made - but calculating the absolute worst case sets a hard limit on the current.
+
+3 * 150mA = 450mA \
+450mA * 3.3V = 1.485W
+
+Therefore the total power consumption of the system will come out to be approximately 1.5W.
+
+### Cost
+
+The costs are listed below:
 - Adafruit 2.8" TFT Touch Shield for Arduino with Resistive Touch Screen v2 - STEMMA QT / Qwiic ($30)
 - Nordic Semiconductor NRF7002-DK WiFi Development Tools ($60)
 - Adafruit 13.56MHz RFID/NFC tag assortment - Classic 1K ($10)
 - Adafruit PN532 NFC/RFID controller breakout board - v1.6 ($40)
+
+Total cost: $130
 
 # Parts of the project that were a success
 
@@ -130,4 +147,4 @@ The parts we used are listed below:
 
 # Would we change the system design
 
-- No, we believe the system design was solid. 
+- Yes, we can use higher quality parts that would (a) handle more RFID tags, (b) be more efficient with current consumption. However, that would require a higher budget so probably is not necessary for an MVP/pitch prototype.
