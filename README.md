@@ -71,12 +71,20 @@ The parts we used are listed below:
 # Parts of the project that were a success
 
 - Touch screen was easy to implement with the LVGL library 
+- We were able to get 3 I2C buses working, and understood how to use devicetree to set it up.
+- The RFID readers on those I2C buses also worked, and we were able to read RFID tags on each. 
+- The MQTT part was a success, we were able to use Nordic's MQTT libraries in the code to send messages to a local MQTT client.
 
 # Parts of the project that didn't go well
 
 - We wanted to use AWS to implement inventory management and analytics with our product, but had a lot of difficulty doing this because our dev board is not supported by AWS.
-- Because of time constraints, we weren't able to integrate all of our functionality.
+- We weren't able to get SPI working on the nRF7002DK, and spent quite a bit of time on that before decidiing to use 3 I2C buses - lost a bit of time there.
+- Because of time constraints, we weren't able to integrate all of our functionality. We got the screen and the RFID readers working separately but didn't have the time to integrate those.
 
 # What we would do differently
 
+- Time management was the biggest barrier in this. We should ideally have time boxed the efforts we spent on getting SPI to work before deciding to switch to I2C, and the efforts we spent trying to get AWS working before switching to another MQTT broker.
+
 # Would we change the system design
+
+- No, we believe the system design was solid. 
