@@ -52,11 +52,30 @@ TODO: Add resolution of each requirement
 
 ## Product Function and Components
 
+The key functions of this project are: 
+1) Touch screen with start and stop buttons to start and stop counting surgical objects. Displayed a timer that represented how much time has passed since the start of the counting session. Displayed object count. 
+2) Implemented MQTT communication to display object status (accounted for or not) and their respective scanned timestamps using _____. 
+3) RFID readers can read one RFID tag each. We supported up to three RFID readers at a time.
+4) When user tries to end surgery without all objects being accounted for, a buzzer will sound until all objects are accounted for.
+
 ## Power & Cost Budgeting
+
+[TO DO - POWER BUDGETING]
+
+The parts we used are listed below:
+- Adafruit 2.8" TFT Touch Shield for Arduino with Resistive Touch Screen v2 - STEMMA QT / Qwiic ($30)
+- Nordic Semiconductor NRF7002-DK WiFi Development Tools ($60)
+- Adafruit 13.56MHz RFID/NFC tag assortment - Classic 1K ($10)
+- Adafruit PN532 NFC/RFID controller breakout board - v1.6 ($40)
 
 # Parts of the project that were a success
 
+- Touch screen was easy to implement with the LVGL library 
+
 # Parts of the project that didn't go well
+
+- We wanted to use AWS to implement inventory management and analytics with our product, but had a lot of difficulty doing this because our dev board is not supported by AWS.
+- Because of time constraints, we weren't able to integrate all of our functionality.
 
 # What we would do differently
 
