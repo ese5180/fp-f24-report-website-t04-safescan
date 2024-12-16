@@ -22,41 +22,80 @@ We expect to make the sales primarily to hospital administrators, and those mana
 
 TODO: Add resolution of each requirement
 
-### Security Requirements
+# RFID System for Surgical Instrument Tracking
 
-- SEC01: The RFID tag information shall be immutable once programmed
-- SEC02: The nRF7002DK shall authenticate only one RFID reader
-- SEC03: The authentication shall run on ARM TrustZone
-- SEC04: WiFi communication shall happen through certificate authentication.
-- SEC05: The nRF7002 shall disallow programming firmware from an untrusted in-circuit emulator (ICE)
+## Security Requirements
 
-### Hardware Requirements
+- **SEC01**: The RFID tag information shall be immutable once programmed.
+  - **Verification**: Ensured that the UID of the RFID tags could not be altered once set.
 
-- HRS01: Each RFID reader shall be able to detect RFID tags within 5cm
-- HRS02: Each RFID reader shall be able to detect at least 5 tags
-- HRS03: The RFID tags shall use the 13.56MHz communication band
-- HRS04: The RFID reader shall communicate with the Nordic nRF7002DK development kit
-- HRS05: Each nRF7002DK shall be able to communicate wirelessly over WiFi to a dashboard
-- HRS06: At least two nRF700DK development kits must be able to communicate wirelessly at the same time
-- HRS07: The RFID platform shall use OTS components for the MVP - PN532 and MIFARE classic tags
+- **SEC02**: The nRF7002DK shall authenticate only one RFID reader.
+  - **Verification**: Configured the Device Tree to only recognize the I2C address 0x24, ensuring exclusive communication with a designated RFID reader.
 
-### Software Requirements
+- **SEC03**: The authentication shall run on ARM TrustZone.
+  - **Implementation & Verification**: Utilized ARM TrustZone to provide a secure environment for authentication processes, ensuring sensitive operations are protected.
 
-- SRS01: Each nRF7002DK shall be uniquely identifiable in the analytics platform
-- SRS02: The nRF7002DK shall periodically transmit the list of currently connected RFID tags over WiFi
-- SRS03: The nRF7002DK shall use Zephyr RTOS
-- SRS04: The nRF7002DK shall use the Memfault Device Reliability platform
-- SRS05: The analytics platform shall be able to receive data from each nRF7002DK
-- SRS06: The analytics platform shall not place any constraints on the number of RFID modules it can support
-- SRS07: The analytics platform backend shall be able to receive the data coming in from the RFID platform into a codebase
+- **SEC04**: WiFi communication shall happen through certificate authentication.
+  - **Implementation & Verification**: Implemented MQTT over TLS using X.509 client certificates, ensuring encrypted and authenticated communication with the MQTT broker.
+
+- **SEC05**: The nRF7002 shall disallow programming firmware from an untrusted in-circuit emulator (ICE).
+  - **Implementation & Verification**: Restricted firmware programming to authenticated tools only, securing against unauthorized access and modifications.
+
+## Hardware Requirements
+
+- **HRS01**: Each RFID reader shall be able to detect RFID tags within 5cm.
+  - **Verification**: Achieved detection within the specified range during testing.
+
+- **HRS02**: Each RFID reader shall be able to detect at least 5 tags.
+  - **Verification**: Limited to detecting 2 tags simultaneously due to hardware constraints of the PN532 chip.
+
+- **HRS03**: The RFID tags shall use the 13.56MHz communication band.
+  - **Verification**: Confirmed compatibility of tags and readers operating at 13.56MHz.
+
+- **HRS04**: The RFID reader shall communicate with the Nordic nRF7002DK development kit.
+  - **Verification**: Successfully connected multiple RFID readers to a single nRF7002DK via distinct I2C buses.
+
+- **HRS05**: Each nRF7002DK shall be able to communicate wirelessly over WiFi to a dashboard.
+  - **Verification**: Demonstrated effective WiFi communication using MQTT over TLS.
+
+- **HRS06**: At least two nRF700DK development kits must be able to communicate wirelessly at the same time.
+  - **Verification**: Tested with a single kit; scalability to multiple kits remains proven.
+
+- **HRS07**: The RFID platform shall use OTS components for the MVP.
+  - **Verification**: Utilized off-the-shelf PN532 RFID readers and MIFARE classic tags.
+
+## Software Requirements
+
+- **SRS01**: Each nRF7002DK shall be uniquely identifiable in the analytics platform.
+  - **Verification**: Configured to identify each nRF7002DK by the UID of connected tags.
+
+- **SRS02**: The nRF7002DK shall periodically transmit the list of currently connected RFID tags over WiFi.
+  - **Verification**: Successfully implemented periodic data transmission, visible in the PyQt GUI.
+
+- **SRS03**: The nRF7002DK shall use Zephyr RTOS.
+  - **Implementation & Verification**: Employed Zephyr RTOS, leveraging its features for MQTT, I2C, and logging to enhance system functionality.
+
+- **SRS04**: The nRF7002DK shall use the Memfault Device Reliability platform.
+  - **Implementation & Verification**: Integrated Memfault to monitor system stability and facilitate issue diagnosis through core dumps and telemetry.
+
+- **SRS05**: The analytics platform shall be able to receive data from each nRF7002DK.
+  - **Verification**: The PyQt Python-based platform received data every 5 seconds over MQTT WiFi, confirming real-time communication.
+
+- **SRS06**: The analytics platform shall not place any constraints on the number of RFID modules it can support.
+  - **Verification**: The system architecture and Python GUI were designed to parse UIDs without limiting the number of RFID modules that can be monitored.
+
+- **SRS07**: The analytics platform backend shall be able to receive the data coming in from the RFID platform into a codebase.
+  - **Verification**: Data was not only displayed in real-time on the terminal but also stored in CSV format for further analysis.
+
 
 ## Product Function and Components
 
 The key functions of this project are: 
 1) Touch screen with start and stop buttons to start and stop counting surgical objects. Displayed a timer that represented how much time has passed since the start of the counting session. Displayed object count. 
-2) Implemented MQTT communication to display object status (accounted for or not) and their respective scanned timestamps using _____. 
-3) RFID readers can read one RFID tag each. We supported up to three RFID readers at a time.
-4) When user tries to end surgery without all objects being accounted for, a buzzer will sound until all objects are accounted for.
+2) Implemented MQTT communication for displaying the status of objects (whether accounted for or not) and their respective scan timestamps using a custom PyQt Python GUI interface.
+3) The interface kept count of RFID tags in a timestamped manner and had a provision to save the detials of the tages used in the suregery in CSV format. 
+4) RFID readers can read one RFID tag each. We supported up to three RFID readers at a time.
+5) When user tries to end surgery without all objects being accounted for, a buzzer will sound until all objects are accounted for.
 
 ## Power & Cost Budgeting
 
