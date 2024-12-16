@@ -101,6 +101,10 @@ The key functions of this project are:
 
 [TO DO - POWER BUDGETING]
 
+Below is the power budget diagram which outlines the distribution and consumption of power across our hardware components:
+
+![Power Budget](images/Power_Budget.png)
+
 The parts we used are listed below:
 - Adafruit 2.8" TFT Touch Shield for Arduino with Resistive Touch Screen v2 - STEMMA QT / Qwiic ($30)
 - Nordic Semiconductor NRF7002-DK WiFi Development Tools ($60)
