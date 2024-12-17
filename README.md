@@ -30,8 +30,6 @@ We expect to make the sales primarily to hospital administrators, and those mana
 
 ## Security, Hardware, and Software requirements
 
-TODO: Add resolution of each requirement
-
 # RFID System for Surgical Instrument Tracking
 
 ## Security Requirements
