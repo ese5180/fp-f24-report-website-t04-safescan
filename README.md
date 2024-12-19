@@ -18,6 +18,34 @@ Our product is an RFID based system that is proposed to integrate seamlessly wit
 
 [MQTT Communication](https://drive.google.com/file/d/1gvAYI0iwCdIEnrwGUyyBEJspVwzbkBlP/view?usp=drive_link) | [RFID Reader and button](https://drive.google.com/file/d/1-VaSbkqoter-aPsLHdEuI1GIpoYi5z5y/view?usp=drive_link) | [Touch Screen](https://drive.google.com/file/d/1LX_aAUIAQsWCOFPT2VRMtihTBBeW2Vw_/view?usp=drive_link) | [Visualization](https://drive.google.com/file/d/17cx6eJbVmqGk-c4f42QcExTqweiWLfj4/view?usp=drive_link) |
 
+<video controls>
+  <source src="videos/MQTT Communication.MOV" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+## Images
+
+**An nRF7002DK connected to 3 RFID readers (2 images)**
+
+![triple_rfid](images/triple_rfid.jpg)
+![triple_rfid](images/triple_rfid_clean.jpg)
+
+**An nRF7002DK connected to 3 RFID readers with tags**
+
+![triple_rfid](images/triple_rfid_3_tags.jpg)
+
+**The touchscreen interface**
+
+![screen](images/screen.jpg)
+
+**MQTT dashboard indicating which tags are connected**
+
+<p float="left">
+  <img src="images\dashboard_empty.jpg" width="49%" />
+  <img src="images\dashboard_2_tags.jpg" width="49%" />
+</p>
+
+
 ## System Architecture
 
 ![architecture](images/arch.drawio.png)
