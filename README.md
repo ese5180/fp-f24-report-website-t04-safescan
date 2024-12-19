@@ -14,6 +14,18 @@ Our IoT venture pitch was a product designed for hospitals, specifically surgery
 
 Our product is an RFID based system that is proposed to integrate seamlessly with most surgical workflows to keep track of all the medical instruments, and inform the surgery team if anything is unaccounted for. We intended to prototype a system of RFID readers and tagged medical instruments to keep track of the various categories of equipment that are used in a surgery room.
 
+## Demo videos
+
+[MQTT Communication](https://drive.google.com/file/d/1gvAYI0iwCdIEnrwGUyyBEJspVwzbkBlP/view?usp=drive_link)
+
+[RFID Reader and button](https://drive.google.com/file/d/1-VaSbkqoter-aPsLHdEuI1GIpoYi5z5y/view?usp=drive_link)
+
+[Touch Screen](https://drive.google.com/file/d/1LX_aAUIAQsWCOFPT2VRMtihTBBeW2Vw_/view?usp=drive_link)
+
+[Visualization](https://drive.google.com/file/d/17cx6eJbVmqGk-c4f42QcExTqweiWLfj4/view?usp=drive_link)
+
+## System Architecture
+
 ![architecture](images/arch.drawio.png)
 
 These RFID readers are intended to be placed under bins and trays that the hospital would already be using, and keep a record of the items present at the start of the surgery. When the surgery is over, if all the items have not been accounted for then the surgery team is alerted.
