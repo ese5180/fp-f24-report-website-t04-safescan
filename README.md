@@ -16,12 +16,7 @@ Our product is an RFID based system that is proposed to integrate seamlessly wit
 
 ## Demo videos
 
-[MQTT Communication](https://drive.google.com/file/d/1gvAYI0iwCdIEnrwGUyyBEJspVwzbkBlP/view?usp=drive_link) | [RFID Reader and button](https://drive.google.com/file/d/1-VaSbkqoter-aPsLHdEuI1GIpoYi5z5y/view?usp=drive_link) | [Touch Screen](https://drive.google.com/file/d/1LX_aAUIAQsWCOFPT2VRMtihTBBeW2Vw_/view?usp=drive_link) | [Visualization](https://drive.google.com/file/d/17cx6eJbVmqGk-c4f42QcExTqweiWLfj4/view?usp=drive_link) |
-
-<video controls>
-  <source src="videos/MQTT Communication.MOV" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+| [MQTT Communication](https://drive.google.com/file/d/1gvAYI0iwCdIEnrwGUyyBEJspVwzbkBlP/view?usp=drive_link) | [RFID Reader and button](https://drive.google.com/file/d/1-VaSbkqoter-aPsLHdEuI1GIpoYi5z5y/view?usp=drive_link) | [Touch Screen](https://drive.google.com/file/d/1LX_aAUIAQsWCOFPT2VRMtihTBBeW2Vw_/view?usp=drive_link) |
 
 ## Images
 
