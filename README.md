@@ -4,9 +4,9 @@
 
 Team members: Nami Lindquist, Yadnik Bendale, Vishnu Venkatesh 
 
-GitHub Repo URL: https://github.com/ese5180/fp-f24-report-website-t04-safescan
+[Code Archive](https://github.com/vishnuv4/SafeScan/)
 
-Website URL: https://ese5180.github.io/fp-f24-report-website-t04-safescan/
+[Website GitHub Repo](https://github.com/ese5180/fp-f24-report-website-t04-safescan)
 
 ## Project
 
